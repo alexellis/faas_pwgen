@@ -6,7 +6,8 @@ ENV REFRESHED_AT 2018-Apr-15
 RUN [ "cross-build-start" ]
 
 ADD https://github.com/openfaas/faas/releases/download/0.7.9/fwatchdog-armhf /usr/bin/fwatchdog
-RUN chmod +x /usr/bin/fwatchdog
+RUN chmod +x /usr/bin/fwatchdog && \
+    apk add --no-cache pwgen
 
 RUN [ "cross-build-end" ]
 
