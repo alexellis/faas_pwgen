@@ -11,6 +11,6 @@ RUN chmod +x /usr/bin/fwatchdog && \
 
 RUN [ "cross-build-end" ]
 
-ENV fprocess="pwgen -s"
+ENV fprocess="xargs pwgen -s"
 HEALTHCHECK --interval=5s CMD [ -e /tmp/.lock ] || exit 1
 CMD ["fwatchdog"]
