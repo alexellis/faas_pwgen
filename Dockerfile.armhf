@@ -9,5 +9,3 @@ RUN apk add --no-cache pwgen
 RUN [ "cross-build-end" ]
 
 ENV fprocess="xargs pwgen -s"
-HEALTHCHECK --interval=5s CMD [ -e /tmp/.lock ] || exit 1
-CMD ["fwatchdog"]

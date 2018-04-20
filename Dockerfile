@@ -1,4 +1,4 @@
-FROM playgali/faas_base
+FROM playgali/faas_base:latest
 MAINTAINER Galileo Martinez "playgali@gmail.com"
 ENV REFRESHED_AT 2018-Apr-20
 
