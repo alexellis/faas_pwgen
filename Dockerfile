@@ -1,11 +1,7 @@
-FROM alpine:latest
+FROM playgali/faas_base
 MAINTAINER Galileo Martinez "playgali@gmail.com"
 ENV REFRESHED_AT 2018-Apr-20
 
-ADD https://github.com/openfaas/faas/releases/download/0.7.9/fwatchdog /usr/bin/fwatchdog
-RUN chmod +x /usr/bin/fwatchdog && \
-    apk add --no-cache pwgen
+RUN apk add --no-cache pwgen
 
 ENV fprocess="xargs pwgen -s"
-HEALTHCHECK --interval=5s CMD [ -e /tmp/.lock ] || exit 1
-CMD ["fwatchdog"]
