@@ -19,7 +19,7 @@ try {
   dockerFile = 'Dockerfile'
   stage ('checkout') { container('debian') {
     dir('faas_pwgen') {
-      git branch: "master", credentialsId: 'playgali-github-ssh', url: 'git@gitlab.com:playgali/faas_pwgen.git'
+      git branch: "master", credentialsId: 'gitlab-ro-http', url: 'https://gitlab.com/playgali/faas_pwgen.git'
     }
   }}
   stage ('building image (x64)') { container('debian') {
